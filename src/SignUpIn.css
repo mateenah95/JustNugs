@@ -1,0 +1,23 @@
+.portal{
+    margin: 0 auto;
+    width: 500px;
+    padding: 5px 0px;
+    border: 5px solid olivedrab;
+}
+
+.only-border{
+    border: 5px solid olivedrab;
+}
+
+.credentials{
+    margin: 0 auto;
+    width: 400px;
+}
+
+.credentials input{
+    color: white;
+}
+
+.portal button{
+    margin: 0px 10px;
+}
