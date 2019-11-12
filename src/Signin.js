@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 import './SignUpIn.css';
 import axios from 'axios';
@@ -36,12 +37,12 @@ class Signin extends React.Component{
     }
 
     signin(){
-        axios.post(`http://localhost:5000/login`, {...this.state})
+        axios.post(`https://justnugs-api.herokuapp.com/login`, {...this.state})
         .then(response => {
             this.clear();
             if(response.data.message.email){
                 this.props.signinUser(response.data.message);
-                alert('Signin successful');
+                return (<Redirect to='/shop' />)
             }
             else{
                 alert(response.data.message);

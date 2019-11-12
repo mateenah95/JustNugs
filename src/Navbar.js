@@ -6,6 +6,15 @@ class Navbar extends React.Component{
     super(props);
 
     this.getAccountControls = this.getAccountControls.bind(this);
+    this.getShopLink = this.getShopLink.bind(this);
+  }
+
+  getShopLink(){
+    if(this.props.user){
+      return (
+        <li><Link to='/shop'>Shop</Link></li>
+      )
+    }
   }
 
   getAccountControls(){
@@ -30,12 +39,13 @@ class Navbar extends React.Component{
             <div className="only-border nav-wrapper teal darken-3 wrapper theme-border">
                 <ul id="nav-mobile" className="left hide-on-med-and-down">
                     <li><Link to='/'>Home</Link></li>
+                    {this.getShopLink()}
                     <li><Link to='/about'>About</Link></li>
                     <li><Link to='/contact'>Contact</Link></li>
                 </ul>
                 <a id="nav-header" href="#" className="brand-logo center">JustNugs</a>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><Link to='/Account' className={this.props.user ? 'cyan' : ''}>{this.props.user ? this.props.user.email : 'GUEST'}</Link></li>
+                    <li><Link to='/Account' className={this.props.user ? 'olivedrab' : ''}>{this.props.user ? this.props.user.email : 'GUEST'}</Link></li>
                     {this.getAccountControls()}
                     
                 </ul>
